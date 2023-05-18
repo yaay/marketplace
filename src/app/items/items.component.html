@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">{{itemProd.title | uppercase}}</div>
+    <div class="card-body text-primary">
+        <div (click)="redirectToDetails(itemProd.id)">
+            <h5 class="card-title"><img class="img-thumbnail" [src]="itemProd.thumbnail"></h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{itemProd.price | currency:"EGP":"symbol"}}</li>
+                <li class="list-group-item">{{itemProd.createdAt | date:"MMMM y" }}</li>
+                <li class="list-group-item">{{itemProd.stock | ratings }}</li>
+            </ul>
+            <br>
+            <div class="text-center">
+            <button class="btn btn-primary aligen">Add to Cart</button>
+        </div>
+        </div>
+
+    </div>
+</div>
