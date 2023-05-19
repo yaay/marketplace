@@ -6,6 +6,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppModule } from './app.module';
 import { AddProductComponent } from './add-product/add-product.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,14 @@ const routes: Routes = [
   {
     path: "home",
     component: ItemsListComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
   },
   {
     path: "**", pathMatch: 'full',

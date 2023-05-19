@@ -9,8 +9,10 @@ import { ItemsListComponent } from './items-list/items-list.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RatingsPipe } from './ratings.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './add-product/add-product.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { AddProductComponent } from './add-product/add-product.component';
     ItemDetailsComponent,
     NotFoundComponent,
     RatingsPipe,
-    AddProductComponent
+    AddProductComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
