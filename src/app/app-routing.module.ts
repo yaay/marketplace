@@ -5,6 +5,7 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppModule } from './app.module';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,14 @@ const routes: Routes = [
   {
     path: "item-details/:id",
     component: ItemDetailsComponent
+  },
+  {
+    path: "add-product",
+    component: AddProductComponent
+  },
+  {
+    path: "home",
+    component: ItemsListComponent
   },
   {
     path: "**", pathMatch: 'full',

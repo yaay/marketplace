@@ -9,6 +9,8 @@ import { ItemsListComponent } from './items-list/items-list.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RatingsPipe } from './ratings.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { RatingsPipe } from './ratings.pipe';
     ItemsListComponent,
     ItemDetailsComponent,
     NotFoundComponent,
-    RatingsPipe
+    RatingsPipe,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
