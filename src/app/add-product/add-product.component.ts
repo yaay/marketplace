@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',
@@ -7,13 +7,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent {
-  movieForm: FormGroup;
+  productForm: FormGroup;
 
-  constructor() {
-    this.movieForm = new FormGroup({
-      productName: new FormControl(null, [Validators.required, Validators.min(3)]),
-      description: new FormControl(null, [Validators.required, Validators.min(10)])
+  constructor(private fb :FormBuilder) {
+
+    // this.productForm = new FormGroup({
+    //   productName: new FormControl('iPhone', [Validators.required, Validators.min(3)]),
+    //   description: new FormControl(null, [Validators.required, Validators.min(10)])
+    // })
+
+    this.productForm = this.fb.group({
+      productName: ['', [Validators.required, Validators.minLength(3)]],
+      description: ['', [Validators.required, Validators.min(10)]]
     })
   }
 
+  submitForm(){
+    console.log(this.productForm)
+  }
+
 }
+
