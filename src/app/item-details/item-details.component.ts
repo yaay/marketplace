@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../interfaces/product';
+import { ItemsAPIService } from '../services/items-api.service';
+
 
 @Component({
   selector: 'app-item-details',
@@ -594,11 +596,10 @@ export class ItemDetailsComponent {
 
   selectedItem !: any;
   
-  constructor(private activeRoute : ActivatedRoute){}
-
+  constructor(private activeRoute : ActivatedRoute, private itemsService: ItemsAPIService){}
 
   ngOnInit(){
-    this.selectedItem = this.items.find(item => item.id == this.activeRoute.snapshot.params['id'])
+    this.selectedItem = this.items.find(item => item.id == this.activeRoute.snapshot.params['id'], this.itemsService.getItems().subscribe((res:any) => this.items = res.products))
   }
 
 }
